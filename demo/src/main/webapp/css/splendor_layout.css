@@ -1,0 +1,261 @@
+/**
+ * #####################################################################
+ * Splendor固有のレイアウト用CSS
+ * #####################################################################
+ */
+ 
+/**
+ * 背景用スタイル
+ */
+body:before {
+    height: 100%;
+    width: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+    content: "";
+    z-index: -1;
+    background-image: URL("/demo/img/splendor_background.jpg");
+}
+
+/**
+ * ログイン画面のベーススタイル
+ */
+.login-base {
+    text-align: center;
+    background: #fff;
+    box-shadow: 0 1px 11px rgba(0, 0, 0, 0.27);
+    border-radius: 2px;
+    width: 100%;
+    max-width: 500px;
+    display: inline-block;
+    margin-top: 42px;
+    vertical-align: middle;
+    position: relative;
+    padding: 35px 55px 35px;
+    min-height: 250px;
+    position: absolute;
+    top: 50%;
+    left: 0;
+    right: 0;
+    margin: 0 auto;
+    margin-top: -160px;
+}
+
+.login-base .login-submit {
+    margin-top: 10px;
+}
+
+/**
+ * Splendor画面のベーススタイル
+ */
+.splendor-base {
+    position: relative;
+    height: 100%;
+    margin-left: auto;
+    margin-right: auto;
+    background-color: #fff;
+    box-shadow: 0 1px 11px rgba(0, 0, 0, 0.27);
+}
+
+ .splendor-base ul {
+    list-style-type: none;
+    background-color: #FFF;
+    margin: 0;
+    overflow: auto;
+    overflow-y: scroll;
+    padding: 0 20px 0px 10px;
+}
+
+.splendor-base ul li {
+    line-height: 1.5rem;
+    padding: 5px 0px;
+    margin: 0;
+    border-bottom: 1px solid #f4f4f4;
+}
+
+.splendor-base ul li p {
+    margin: 0;
+}
+
+/**
+ * Splendor画面のヘッダー用スタイル
+ */
+.chat-header {
+    text-align: center;
+    padding: 15px;
+    border-bottom: 1px solid #ececec;
+    font-size: 14px;
+}
+
+/**
+ * Splendor画面のチャットメッセージ表示（左側）
+ */
+.splendor-base .event-message {
+    width: 100%;
+    text-align: center;
+    clear: both;
+}
+
+.splendor-base .event-message p {
+    color: #777;
+    font-size: 14px;
+    word-wrap: break-word;
+}
+
+.splendor-base .chat-message {
+    padding-left: 50px;
+    position: relative;
+}
+
+.splendor-base .chat-message i {
+    position: absolute;
+    width: 30px;
+    height: 30px;
+    overflow: hidden;
+    left: 10px;
+    display: inline-block;
+    vertical-align: middle;
+    font-size: 18px;
+    line-height: 30px;
+    color: #fff;
+    text-align: center;
+    border-radius: 50%;
+    font-style: normal;
+    text-transform: uppercase;
+}
+
+.splendor-base .chat-message span {
+    color: #333;
+    font-weight: 600;
+}
+
+.splendor-base .chat-message p {
+    color: #43464b;
+    font-size: 14px;
+}
+
+.splendor-base .chat-message .timestamp {
+	position: relative;
+	text-align: right;
+	font-style: italic;
+}
+
+/**
+ * Splendor画面のチャット入力欄
+ */
+.splendor-base #messageForm {
+    padding: 20px;
+    height: 120px;
+}
+
+#messageForm .input-group input {
+    float: left;
+    width: calc(100% - 85px);
+    height: 30px;
+}
+
+#messageForm .input-group textarea {
+	float: left;
+	width: calc(100% - 85px);
+}
+
+/*
+#messageForm .input-group button {
+    float: left;
+    width: 80px;
+    height: 38px;
+    margin-left: 5px;
+}
+*/
+
+#messageForm .input-group button {
+    float: left;
+    width: 80px;
+    height: 38px;
+    margin-left: 5px;
+}
+
+
+/**
+ * レスポンシブデザイン用（PCサイズ）
+ */
+@media screen and (min-width: 769px){
+    .hidden-xl{
+        display:none;
+    }
+    .chat-container {
+        min-width: 700px;
+        width: 80%;
+        height: calc(100% - 100px);
+        margin-top: 30px;
+    }
+    .main-contents-common{
+        float:left;
+        height: calc(100% - 54px);
+    }
+    .left-side{
+        width:230px;
+    }
+    
+    .main-contents{
+        width: calc(100% - 560px);
+    }
+    
+    .right-side{
+        width:330px;
+        border-left: 1px solid #ececec;
+    }
+    #chat-page ul {
+        height: calc(100% - 300px);
+    }
+
+    #chat-page #conversation {
+        width: 230px;
+    }
+}
+
+/**
+ * レスポンシブデザイン用（モバイルサイズ）
+ */
+@media screen and (max-width: 768px){
+    .hidden-xs{
+        display:none;
+    }
+
+    .chat-container {
+        width: 100%;
+        height: 100%;
+        overflow-y:auto;
+    }
+    .main-contents-common{
+        width:100%;
+    }
+
+    #chat-page ul {
+        height: 50px;
+        border-bottom: solid 1px #cacaca;
+        margin-bottom: 5px;
+    }
+
+    #chat-page #conversation {
+        width: 100%;
+    }
+
+    .chat-header{
+        height:60px;
+    }
+
+    .chat-header img{
+        float:left;
+        width:40px;
+        height:40px;
+    }
+    .chat-header div{
+        font-size: 20px;
+        line-height: 40px;
+        height: 40px;
+        width: 150px;
+        margin-left: 10px;
+    }
+}

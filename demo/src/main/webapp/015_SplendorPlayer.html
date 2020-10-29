@@ -1,0 +1,56 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+</head>
+<body>
+	<div ng-controller="015_SplendorPlayerController">
+		<!-- ■右枠（プレイヤー） -->
+		<div class="main-contents-common right-side">
+			<div class="play-controll">
+					<li ng-attr_id="{{'gamePlayer_info_' + gamePlayer.value.name}}" ng-repeat="gamePlayer in gamePlayers | orderBy: 'no'">
+						<div class="game_player_info">
+							<img ng-src="{{gamePlayer.value.avatar_url}}"/>
+							<div class="player_name" style="color:black;">{{gamePlayer.value.name}}</div>
+							<div class="player_score">{{gamePlayer.value.score}}点</div>
+							<div class="player_noble_tiles">{{gamePlayer.value.nobleTiles.length}}</div>
+						</div>
+						<table>
+							<tr>
+								<td align="center" ng-repeat="(key, value) in gamePlayer.value.devCard">
+									<div class="player_devCard {{key}}" ng-click="browseDevCard(this, gamePlayer.value.name)">{{value.length}}</div>
+								</td>
+							</tr>	
+						</table>
+						<table>
+							<tr>
+								<td align="center" ng-repeat="(key, value) in gamePlayer.value.token">
+									<div class="player_token {{key}}">{{value}}</div>
+								</td>
+							</tr>	
+						</table>
+					</li>
+			</div>
+			<div class="start-game-table">
+				<button class="primary" type="submit" ng-click="sitTable()" ng-show="!my_player_info.game_start_flg && !gamePlayingFlg">席に着く</button>
+				<button class="primary" type="submit" ng-click="leaveTable()" ng-show="my_player_info.game_start_flg && !gamePlayingFlg">席を離れる</button>
+				<button class="primary" type="submit" ng-click="gameStart()" ng-show="gameStartButtonSwitch && !gamePlayingFlg">ゲーム開始</button>
+
+				<div ng-show="gamePlayingFlg">
+					<input type="radio" class="token_mode" id="mode1" ng-model="token_mode" value="get_another_token" ng-change="tokenModeChange()"><label for="mode1">別々のトークンを3枚</label>
+					<input type="radio" class="token_mode" id="mode2" ng-model="token_mode" value="get_same_token" ng-change="tokenModeChange()"><label for="mode2">同じトークンを2枚</label>
+					<input type="radio" class="token_mode" id="mode3" ng-model="token_mode" value="keep_dev_card" ng-change="tokenModeChange()"><label for="mode3">発展カードをキープ</label>
+
+					<table>
+						<tr>
+							<td align="center" ng-repeat="(key, value) in my_player_info.token">
+								<div class="player_token {{key}}">{{value}}</div>
+							</td>
+						</tr>	
+					</table>
+				</div>
+			</div>
+		</div>
+	</div>
+</body>
+</html>

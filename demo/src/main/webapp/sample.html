@@ -8,16 +8,15 @@
 	$(function() {
 		// Ajax通信テスト ボタンクリック
 		$("#sendButton").click(function() {
-			alert("send");
 			$.ajax({
 				type : "GET",
 				url : "getTestData",
 				dataType : "json",
 				success : function(data) {
-					console.log("success");
+					alert("success");
 				},
 				error : function(XMLHttpRequest, textStatus, errorThrown) {
-					console.log("error");
+					alert("error");
 				}
 			});
 		});

@@ -1,0 +1,123 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+</head>
+<body>
+	<div ng-controller="014_SplendorFieldController">
+		<!-- ■中央（カード置き場） -->
+		<div class="main-contents-common main-contents">
+			
+			<!-- 貴族カード置き場 -->
+			<div class='nobleTilesField'>
+				<table>
+					<tr>
+						<td align="center" ng-repeat="noble in global.nobleTiles | orderBy: 'id'">
+							<div class="nobleTiles" ng-attr-id="{{noble.id}}">
+								<span ng-if="noble.value!=-1">
+									<div class="devCard_score">
+											{{gameData.noble_card_data[noble.value].score}}
+										</div>
+										<div class="devCard_costs">
+											<div class="dev_cost emerald" ng-if="gameData.noble_card_data[noble.value].cost.emerald != 0">{{gameData.noble_card_data[noble.value].cost.emerald}}</div>
+											<div class="dev_cost sapphire" ng-if="gameData.noble_card_data[noble.value].cost.sapphire != 0">{{gameData.noble_card_data[noble.value].cost.sapphire}}</div>
+											<div class="dev_cost ruby" ng-if="gameData.noble_card_data[noble.value].cost.ruby != 0">{{gameData.noble_card_data[noble.value].cost.ruby}}</div>
+											<div class="dev_cost diamond" ng-if="gameData.noble_card_data[noble.value].cost.diamond != 0">{{gameData.noble_card_data[noble.value].cost.diamond}}</div>
+											<div class="dev_cost onyx" ng-if="gameData.noble_card_data[noble.value].cost.onyx != 0">{{gameData.noble_card_data[noble.value].cost.onyx}}</div>
+										</div>
+								</span>
+							</div>
+						</td>
+					</tr>
+				</table>
+			</div>
+			
+			<!-- レベル３カード置き場 -->
+			<div class='depCardLevel3Field gameField'>
+				<div ng-if='game_start_flg' class='depCardLevel3Deck devCard hidden-xs'>Splendor</div>
+				<table class='devCardTable'>
+					<tr>
+						<td align="center" ng-repeat="level3 in global.devCard.level3 | orderBy: 'id'">
+							<div class="devCard {{gameData.devlopment_card_deck3_data[level3.value].color}}" ng-attr-id="{{level3.id}}" ng-click="devCardLevel3Click(level3)">
+								<span ng-if="level3.value!=-1">
+									<div class="devCard_score">
+										{{gameData.devlopment_card_deck3_data[level3.value].score}}
+									</div>
+									<div class="devCard_costs">
+										<div class="dev_cost emerald" ng-if="gameData.devlopment_card_deck3_data[level3.value].cost.emerald != 0">{{gameData.devlopment_card_deck3_data[level3.value].cost.emerald}}</div>
+										<div class="dev_cost sapphire" ng-if="gameData.devlopment_card_deck3_data[level3.value].cost.sapphire != 0">{{gameData.devlopment_card_deck3_data[level3.value].cost.sapphire}}</div>
+										<div class="dev_cost ruby" ng-if="gameData.devlopment_card_deck3_data[level3.value].cost.ruby != 0">{{gameData.devlopment_card_deck3_data[level3.value].cost.ruby}}</div>
+										<div class="dev_cost diamond" ng-if="gameData.devlopment_card_deck3_data[level3.value].cost.diamond != 0">{{gameData.devlopment_card_deck3_data[level3.value].cost.diamond}}</div>
+										<div class="dev_cost onyx" ng-if="gameData.devlopment_card_deck3_data[level3.value].cost.onyx != 0">{{gameData.devlopment_card_deck3_data[level3.value].cost.onyx}}</div>
+									</div>
+								</span>
+							</div>
+						</td>
+					</tr>
+				</table>
+			</div>
+			
+			<!-- レベル２カード置き場 -->
+			<div class='depCardLevel2Field gameField'>
+				<div ng-if='game_start_flg' class='depCardLevel2Deck devCard hidden-xs'>Splendor</div>
+				<table class='devCardTable'>
+					<tr>
+						<td align="center" ng-repeat="level2 in global.devCard.level2 | orderBy: 'id'">
+							<div class="devCard {{gameData.devlopment_card_deck2_data[level2.value].color}}" ng-attr-id="{{level2.id}}" ng-click="devCardLevel2Click(level2)">
+								<span ng-if="level2.value!=-1">
+										<div class="devCard_score">
+											{{gameData.devlopment_card_deck2_data[level2.value].score}}
+										</div>
+										<div class="devCard_costs">
+											<div class="dev_cost emerald" ng-if="gameData.devlopment_card_deck2_data[level2.value].cost.emerald != 0">{{gameData.devlopment_card_deck2_data[level2.value].cost.emerald}}</div>
+											<div class="dev_cost sapphire" ng-if="gameData.devlopment_card_deck2_data[level2.value].cost.sapphire != 0">{{gameData.devlopment_card_deck2_data[level2.value].cost.sapphire}}</div>
+											<div class="dev_cost ruby" ng-if="gameData.devlopment_card_deck2_data[level2.value].cost.ruby != 0">{{gameData.devlopment_card_deck2_data[level2.value].cost.ruby}}</div>
+											<div class="dev_cost diamond" ng-if="gameData.devlopment_card_deck2_data[level2.value].cost.diamond != 0">{{gameData.devlopment_card_deck2_data[level2.value].cost.diamond}}</div>
+											<div class="dev_cost onyx" ng-if="gameData.devlopment_card_deck2_data[level2.value].cost.onyx != 0">{{gameData.devlopment_card_deck2_data[level2.value].cost.onyx}}</div>
+										</div>
+								</span>
+							</div>
+						</td>
+					</tr>
+				</table>
+			</div>
+			
+			<!-- レベル１カード置き場 -->
+			<div class='depCardLevel1Field gameField'>
+				<div ng-if='game_start_flg' class='depCardLevel1Deck devCard hidden-xs'>Splendor</div>
+				<table class='devCardTable'>
+					<tr>
+						<td align="center" ng-repeat="level1 in global.devCard.level1 | orderBy: 'id'">
+							<div class="devCard {{gameData.devlopment_card_deck1_data[level1.value].color}}" ng-attr-id="{{level1.id}}" ng-click="devCardLevel1Click(level1)">
+								<span ng-if="level1.value!=-1">
+										<div class="devCard_score">
+											{{gameData.devlopment_card_deck1_data[level1.value].score}}
+										</div>
+										<div class="devCard_costs">
+											<div class="dev_cost emerald" ng-if="gameData.devlopment_card_deck1_data[level1.value].cost.emerald != 0">{{gameData.devlopment_card_deck1_data[level1.value].cost.emerald}}</div>
+											<div class="dev_cost sapphire" ng-if="gameData.devlopment_card_deck1_data[level1.value].cost.sapphire != 0">{{gameData.devlopment_card_deck1_data[level1.value].cost.sapphire}}</div>
+											<div class="dev_cost ruby" ng-if="gameData.devlopment_card_deck1_data[level1.value].cost.ruby != 0">{{gameData.devlopment_card_deck1_data[level1.value].cost.ruby}}</div>
+											<div class="dev_cost diamond" ng-if="gameData.devlopment_card_deck1_data[level1.value].cost.diamond != 0">{{gameData.devlopment_card_deck1_data[level1.value].cost.diamond}}</div>
+											<div class="dev_cost onyx" ng-if="gameData.devlopment_card_deck1_data[level1.value].cost.onyx != 0">{{gameData.devlopment_card_deck1_data[level1.value].cost.onyx}}</div>
+										</div>
+								</span>
+							</div>
+						</td>
+					</tr>
+				</table>
+			</div>
+			
+			<!-- トークン置き場 -->
+			<div class='tokenField gameField'>
+				<table class='tokenTable'>
+					<tr>
+						<td align="center" ng-repeat="(key, value) in global.token">
+							<div class="token {{key}}" id="token_{{key}}" ng-click="tokenTilesClick(this)">{{value}}</div>
+						</td>
+					</tr>
+				</table>
+			</div>
+		</div>
+	</div>
+</body>
+</html>

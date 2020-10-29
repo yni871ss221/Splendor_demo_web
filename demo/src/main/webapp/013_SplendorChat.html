@@ -1,0 +1,37 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+</head>
+<body>
+	<div ng-controller="013_SplendorChatController">
+		<!-- ■左側（チャット枠） -->
+		<div class="main-contents-common left-side">
+			
+			<!-- アバター -->
+			<div class="join_player hidden-xs">
+				<li ng-repeat="player in players">
+					<div class="join_player_info">
+						<img ng-src="{{player.avatar_url}}"/>
+						<div>{{player.name}}</div>
+					</div>
+				</li>
+			</div>
+			
+			<!-- メッセージ -->
+			<ul id="conversation">
+				<li ng-repeat="chatMessage in chatMessages" ng-class="getChatClass($index, chatMessages)">
+					<div ng-if="chatMessage.type == 'JOIN'" class="event-message"><p>{{chatMessage.sender}} が入室しました。</p></div>
+					<div ng-if="chatMessage.type == 'LEAVE'" class="event-message"><p>{{chatMessage.sender}} が退室しました。</p></div>
+					<div ng-if="chatMessage.type == 'CHAT'" class="chat-message">
+						<i style="background-color:#2196F3">{{chatMessage.sender[0]}}</i>
+						<span>{{chatMessage.sender}}</span>
+						<p ng-bind-html="chatMessage.content"></p>
+						<div class="timestamp">{{chatMessage.timestamp | amTimeAgo }}</div>
+					</div>
+				</li>
+			</ul>
+		</div>
+	</div>
+</body>
+</html>

@@ -1,0 +1,23 @@
+<!DOCTYPE HTML>
+<html>
+
+<head>
+	<title>入室ページ</title>
+	<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+</head>
+
+<body>
+	<div ng-controller="001_LoginController" class="login-base">
+		<h1>ニックネームを入力</h1>
+		<form ng-submit="login()">
+			<div>
+				<input type="text" placeholder="ニックネームを10文字まで" autocomplete="off" ng-required="true" ng-model="player.name">
+			</div>
+			<div>
+				<button type="submit" class="login-submit">入場</button>
+			</div>
+		</form>
+	</div>
+</body>
+</html>

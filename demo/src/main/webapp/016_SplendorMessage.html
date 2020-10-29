@@ -1,0 +1,19 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+</head>
+<body>
+	<div ng-controller="016_SplendorMessageController">
+		<!-- ■下枠（メッセージ入力ボックス） -->
+		<form id="messageForm" name="messageForm">
+			<div class="form-group">
+				<div class="input-group clearfix message-input-area">
+					<input type="text" id="message" placeholder="Type a message..." autocomplete="off" class="form-control" ng-model="message" ng-required="true"></text>
+					<button class="primary" type="submit" ng-click="sendMessage()">送る</button>
+				</div>
+			</div>
+		</form>
+	</div>
+</body>
+</html>

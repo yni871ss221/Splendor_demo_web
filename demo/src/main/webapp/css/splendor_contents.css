@@ -1,0 +1,300 @@
+/**
+ * #####################################################################
+ * Splendor固有のコンテンツCSS
+ * カード、プレイヤー等
+ * #####################################################################
+ */
+ 
+.connecting {
+    padding-top: 5px;
+    text-align: center;
+    color: #777;
+    position: absolute;
+    top: 65px;
+    width: 100%;
+}
+
+.join_player{
+    background: black;
+    min-height: 300px;
+}
+
+.join_player_info{
+    padding: 10px;
+}
+
+.join_player_info img{
+    width: 50px;
+    height: 50px;
+    float:left;
+}
+
+.join_player_info div{
+    font-size: 20px;
+    line-height: 50px;
+    height: 50px;
+    color: white;
+    width: 150px;
+    float:left;
+    margin-left:10px;
+}
+
+.message-input-area{
+	width:100%;
+}
+
+.play-controll{
+	height: calc(100% - 70px);
+}
+
+.start-game-table{
+	text-align:center;
+}
+
+.play-controll li{
+	overflow-y:auto;
+}
+
+.play-controll table{
+    width:80%;
+    font-size:15px;
+}
+
+.game_player{
+    width: 230px;
+    background: black;
+    min-height: 300px;
+}
+
+.game_player_info{
+    padding: 10px;
+    overflow-y: auto;
+}
+
+.game_player_info img{
+    width: 50px;
+    height: 50px;
+    float:left;
+}
+
+.game_player_info div{
+    font-size: 20px;
+    line-height: 50px;
+    height: 50px;
+    float:left;
+    margin-left:10px;
+}
+
+.nobleTilesField table{
+    width:100%;
+}
+
+.nobleTiles{
+    text-align: center;
+    border: solid 1px;
+    position: relative;
+    border-radius: 10%;
+}
+
+.devCard{
+    border: solid 1px;
+    text-align: center;
+    position: relative;
+}
+
+.devCardTable{
+    width:calc(100% - 90px);
+}
+
+.depCardLevel3Field .devCard{
+    border: solid 1px #00204b;
+}
+.depCardLevel2Field .devCard{
+    border: solid 1px #412200;
+}
+.depCardLevel1Field .devCard{
+    border: solid 1px #002c0b;
+}
+
+.depCardLevel3Deck{
+    color:rgb(82, 82, 0);
+    background: #79b4ff;
+    float:left;
+}
+
+.depCardLevel2Deck{
+    color:rgb(82, 82, 0);
+    background: #ffe977;
+    float:left;
+}
+
+.depCardLevel1Deck{
+    color:rgb(82, 82, 0);
+    background: #12a24d;
+    float:left;
+}
+
+.token{
+    border: solid 1px;
+    border-radius: 100%;
+    text-align: center;
+    font-size:18px;
+}
+
+.tokenTable{
+    width:100%;
+}
+
+.emerald{
+    background:#008f3b;
+}
+
+.sapphire{
+    background:#005eb7;
+}
+
+.ruby{
+    background:#ff3a3a;
+}
+
+.diamond{
+    background:#efefef;
+}
+
+.onyx{
+    background:#502b00;
+    color:white;
+}
+
+.goldJoker{
+    background:#ffbb00;
+}
+
+.devCard_score{
+    font-size: 20px;
+    color: white;
+    text-shadow: black 1px 1px 0px, black -1px 1px 0px, black 1px -1px 0px, black -1px -1px 0px;
+    text-align: left;
+    margin-left: 5px;
+}
+.devCard_costs{
+    left:0;
+    bottom:0;
+    position: absolute;
+}
+.dev_cost{
+    border-radius:50%;
+    line-height:25px;
+    color: white;
+    text-shadow: black 1px 1px 0px, black -1px 1px 0px, black 1px -1px 0px, black -1px -1px 0px;
+    font-size: 12px;
+    border: solid 1px white;
+}
+
+.player_name{
+    width:140px;
+}
+
+.player_noble_tiles{
+    width: 40px;
+    height: 50px;
+    border: solid 1px;
+    text-align: center;
+}
+
+.player_noble_tiles{
+    width: 40px;
+    height: 50px;
+    border: solid 1px;
+    text-align: center;
+}
+
+.player_devCard{
+    width: 35px;
+    height: 35px;
+    border: solid 1px;
+    text-align: center;
+    line-height: 35px;
+}
+
+.player_token{
+    width: 35px;
+    height: 35px;
+    border: solid 1px;
+    text-align: center;
+    line-height: 35px;
+    border-radius: 100%;
+}
+
+.my_turn{
+    background: #abdfff;
+}
+
+/**
+ * レスポンシブデザイン用（PCサイズ）
+ */
+@media screen and (min-width: 769px){
+    .join_player{
+        width: 230px;
+    }
+    
+    .nobleTiles{
+        width: 110px;
+        height: 110px;
+    }
+    .dev_cost{
+        width:25px;
+        height:25px;
+        line-height:25px;;
+    }
+    .gameField{
+        margin-top:20px;
+        margin-left:20px;
+    }
+    .devCard{
+        width: 90px;
+        height: 130px;
+    }
+
+    .token{
+        width: 50px;
+        height: 50px;
+        line-height: 50px;
+    }
+}
+
+/**
+ * レスポンシブデザイン用（モバイルサイズ）
+ */
+@media screen and (max-width: 768px){
+    .join_player{
+        width: 100%;
+    }
+    .nobleTiles {
+        width: 60px;
+        height: 60px;
+    }
+    .dev_cost {
+        width: 18px;
+        height: 18px;
+        line-height: 18px;
+        float: left;
+    }
+    .gameField{
+        margin-top:5px;
+    }
+
+    .devCard {
+        width: 78px;
+        height: 78px;
+    }
+    .token{
+        width: 35px;
+        height: 35px;
+        line-height: 35px;
+    }
+    .right-side{
+        margin-top: 10px;
+        border-top: solid 1px;
+    }
+}

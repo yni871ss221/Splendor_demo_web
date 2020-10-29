@@ -1,0 +1,26 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+</head>
+<body>
+	<div ng-controller="011_SplendorController" class="splendor-base"
+		ng-show="isConnectWebSocket" ng-init="init()">
+		
+		<!-- ■上部ヘッダー -->
+		<!-- <div ng-include="'012_SplendorHeader.html'"></div> -->
+		
+		<!-- ■左側（チャット枠） -->
+		<div ng-include="'013_SplendorChat.html'"></div>
+
+		<!-- ■中央（カード置き場） -->
+		<div ng-include="'014_SplendorField.html'"></div>
+
+		<!-- ■右枠（プレイヤー） -->
+		<div ng-include="'015_SplendorPlayer.html'"></div>
+
+		<!-- ■下枠（メッセージ入力ボックス） -->
+		<div ng-include="'016_SplendorMessage.html'"></div>
+	</div>
+</body>
+</html>
